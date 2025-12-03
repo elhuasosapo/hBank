@@ -124,17 +124,17 @@ Public Class Form1
         End If
 
         ' Filtro per descrizione
-        If txtFiltroDescrizione.Text.Trim() <> "" Then
-            condizioni.Add($"descrizione LIKE '%{txtFiltroDescrizione.Text.Trim().Replace("'", "''")}%'")
+        If txtFiltroDescrizione.Text.Trim <> "" Then
+            condizioni.Add($"descrizione LIKE '%{txtFiltroDescrizione.Text.Trim.Replace("'", "''")}%'")
         End If
 
         ' Filtro per categoria
-        If cmbCategoria.Text.Trim() <> "" Then
+        If cmbCategoria.Text.Trim <> "" Then
             condizioni.Add($"categoria = '{cmbCategoria.Text.Replace("'", "''")}'")
         End If
 
         ' Monta la WHERE
-        Dim whereSQL As String = String.Join(" AND ", condizioni)
+        Dim whereSQL = String.Join(" AND ", condizioni)
 
         CaricaMovimenti(whereSQL)
     End Sub
